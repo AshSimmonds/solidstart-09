@@ -6,6 +6,16 @@ export const serverScheme = z.object({
   SITE_URL: z.string(),
   DISCORD_CLIENT_ID: z.string(),
   DISCORD_CLIENT_SECRET: z.string(),
+  AIRTABLE_API_KEY: z.string(),
+  AIRTABLE_BASE_ID: z.string(),
+  XATA_API_KEY: z.string(),
+  SABER_USERNAME: z.string(),
+  SABER_PASSWORD: z.string(),
+  AUTH0_SECRET: z.string(),
+  AUTH0_BASE_URL: z.string(),
+  AUTH0_ISSUER_BASE_URL: z.string(),
+  AUTH0_CLIENT_ID: z.string(),
+  AUTH0_CLIENT_SECRET: z.string(),
 });
 
 export const clientScheme = z.object({

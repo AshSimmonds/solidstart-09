@@ -24,7 +24,7 @@ const Home: ParentComponent = () => {
     <>
       <Title>Home</Title>
       <div>
-        <Switch 
+        <Switch
           fallback={
             <pre class="font-bold text-2xl text-gray-500">
               {JSON.stringify(res.data, null, 2)}
@@ -39,17 +39,32 @@ const Home: ParentComponent = () => {
         </Switch>
         <Switch
           fallback={
-            <button
-              onClick={() =>
-                authClient.login("discord", {
-                  successRedirect: "/",
-                  failureRedirect: "/",
-                })
-              }
-              class="bg-purple-700 mx-3 my-3 rounded-lg w-56 p-2.5 text-white font-bold flex items-center justify-center"
-            >
-              Login with discord
-            </button>
+            <>
+              <button
+                onClick={() =>
+                  authClient.login("discord", {
+                    successRedirect: "/",
+                    failureRedirect: "/",
+                  })
+                }
+                class="bg-purple-700 mx-3 my-3 rounded-lg w-56 p-2.5 text-white font-bold flex items-center justify-center"
+              >
+                Login with discord
+              </button>
+              <hr />
+              <button
+                onClick={() =>
+                  authClient.login("auth0", {
+                    successRedirect: "/",
+                    failureRedirect: "/",
+                  })
+                }
+                class="bg-purple-700 mx-3 my-3 rounded-lg w-56 p-2.5 text-white font-bold flex items-center justify-center"
+              >
+                Auth0
+              </button>
+
+            </>
           }
         >
           <Match when={user.loading}>
